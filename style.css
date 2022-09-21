@@ -1,0 +1,5 @@
+.encabezado {
+    background-image:url("./img/header.jpg");
+    height: 100vh;
+    background-size: cover;
+}
