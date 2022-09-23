@@ -26,7 +26,7 @@
 
 /* Seccion Comprar */
 #comprar {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url('./assets/ba1.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url('assets/ba1.jpg');
     background-size:cover;
     background-position: center;
 }
@@ -60,7 +60,7 @@ h3 {
 }
 
 .fondo-playa {
-    background-image: url('./assets/honolulu.jpg');
+    background-image: url('assets/honolulu.jpg');
     background-size: cover;
     background-position: center;
 }
