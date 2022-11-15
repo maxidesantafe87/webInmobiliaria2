@@ -1,0 +1,80 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato');
+@import url('https://fonts.googleapis.com/css2?family=Lora');
+
+* {
+  margin: 0;
+}
+
+html {
+  font-family: 'Lato', 'Lora';
+  font-size: 16px;
+}
+
+.bk-grey {
+  
+  background-color: rgb(51, 55, 59) !important;
+  color: seashell;
+}
+
+.bk-blue {
+  background: linear-gradient(to right, rgb(32, 69, 90), rgb(28, 91, 128) );
+  color: seashell;
+}
+
+.bk-blue a.nav-link {
+  color: seashell;
+}
+
+.bk-blue a.nav-link:hover {
+  color: black !important;
+}
+
+
+.fondo-transparente {
+  opacity: 0.9 ;
+  background-color: #0000007e;  
+  color: seashell;
+}
+
+article#inicio {
+  height: 90vh;
+  overflow: hidden;
+  background: center/cover no-repeat url(../imagenes/ba1.jpg);
+}
+
+article#inicio > section {
+  height: 100%;
+  text-align: end;
+  font-weight: bold;
+}
+
+.color-pass {
+  opacity: 0.9 ;
+  background-color: rgb(150,201,62);
+  border-color: rgb(105, 201, 62);
+  color: seashell;
+}
+.color-pass:hover {
+  opacity: .7;
+  color: seashell !important;
+  background-color: rgb(105, 201, 62);
+}
+
+.color-pass-ticket {
+  opacity: 0.9 ;
+  background-color: rgb(106, 212, 57);
+  border-color: rgb(106, 212, 57);
+  color: seashell;
+}
+.color-pass-ticket:hover {
+  opacity: .7;
+  color: seashell !important;
+  background-color: rgb(170,201,62);
+}
+
+.bordeVentas { 
+  
+  border-style: double; border-width: 4px; 
+
+}
