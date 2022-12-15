@@ -261,24 +261,24 @@
 				<?php
           include ("conexion/conectar.php"); 
 				$numeracion = 1;
-				while ($reg_expediente_actual = mysqli_fetch_array($libroexpedientes)) { ?>
+				while ($reg_bases_actual = mysqli_fetch_array($sel_datos_base)) { ?>
 					<tr>
 						<th style="vertical-align:middle;"><?php echo "$numeracion" ?></th>
 
 					  <td style="vertical-align:middle;">
-							<H6><?php echo $reg_expediente_actual['apellido'] ?> </H6>
+							<H6><?php echo $reg_bases_actual['apellido'] ?> </H6>
 						</td>
 					
             <td style="vertical-align:middle;">
-							<H6><?php echo $reg_expediente_actual['nombre'] ?> </H6>
+							<H6><?php echo $reg_bases_actual['nombre'] ?> </H6>
 						</td>
 					
             <td style="vertical-align:middle;">
-							<H6><?php echo substr($reg_expediente_actual['tema'], 0, 80) ?><?php echo "..." ?> </H6>
+							<H6><?php echo substr($reg_bases_actual['tema'], 0, 80) ?><?php echo "..." ?> </H6>
 						</td>
 
             <td style="vertical-align:middle;">
-							<H6><?php echo $reg_expediente_actual['inscripcion'] ?> </H6>
+							<H6><?php echo $reg_bases_actual['inscripcion'] ?> </H6>
 						</td>
 
 						

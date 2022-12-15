@@ -15,7 +15,9 @@
        <title>Trabajo Práctico Integrador Codo a Codo</title>    
   </head>
 
-  
+  <?php
+    include("index.php");
+    ?>
   
   <body>
       <!--Comienza la barra NAV-->
@@ -263,7 +265,8 @@
 				<?php
           include ("conexion/conectar.php"); 
 				$numeracion = 1;
-				while ($reg_expediente_actual = mysqli_fetch_array($libroexpedientes)) { ?>
+
+				while ($reg_expediente_actual = mysqli_fetch_array($conexionbases)) { ?>
 					<tr>
 						<th style="vertical-align:middle;"><?php echo "$numeracion" ?></th>
 
@@ -283,7 +286,10 @@
 							<H6><?php echo $reg_expediente_actual['inscripcion'] ?> </H6>
 						</td>
 
-						
+						 echo '<tr> 
+                  <td>'.$field1name.'</td> 
+                  
+              </tr>';
 
 
 
