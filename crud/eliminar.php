@@ -1,7 +1,7 @@
 <?php
 
 
-include_once "../registro/base_de_datos.php";
+include_once "../conexion/base_de_datos.php";
 $dni_a_eliminar = $_POST["DniEliminado"];
 
 

@@ -1,7 +1,7 @@
 
 <?php
 
-include_once "../registro/base_de_datos.php";
+include_once "../conexion/base_de_datos.php";
 $orador_nombre = $_POST["Nombre"];
 $orador_apellido = $_POST["Apellido"];
 $orador_dni = $_POST["Dni"];
