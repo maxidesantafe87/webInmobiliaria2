@@ -78,3 +78,123 @@ article#inicio > section {
   border-style: double; border-width: 4px; 
 
 }
+
+
+
+
+.tabla input,
+textarea {
+  border: 1px solid #999999;
+  border-radius: 3px;
+
+}
+
+.tabla input {
+
+  height: 20px;
+
+}
+
+.tabla {
+
+  border: solid #ccc 1px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 1px 1px #ccc;
+  -moz-box-shadow: 0 1px 1px #ccc;
+  box-shadow: 0 1px 1px #ccc;
+
+}
+
+
+
+
+.tabla td,
+.tabla th {
+
+  border-left: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+
+}
+
+.tabla tr:hover {
+
+  /*background: #fbf8e9;*/
+  background: orange;
+  -o-transition: all 0.1s ease-in-out;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+
+}
+
+
+.tabla th {
+  /*colo del titulo de la tabla*/
+  background-color: #dce9f9;
+  border-top: none;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+}
+
+.titulo th {
+
+  background-color: #e9f9dc;
+  border-top: none;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+}
+
+.titulo input,
+textarea {
+  border: 1px solid #999999;
+  border-radius: 3px;
+
+}
+
+.titulo input {
+
+  height: 20px;
+
+}
+
+.titulo {
+
+  border: solid #ccc 1px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 1px 1px #ccc;
+  -moz-box-shadow: 0 1px 1px #ccc;
+  box-shadow: 0 1px 1px #ccc;
+
+}
+
+
+.titulo tr:hover {
+
+  /*color del fondo de celdas*/
+  background: black;
+  -o-transition: all 0.1s ease-in-out;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+
+}
+
+
+.titulo td,
+.titulo th {
+
+  border-left: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  vertical-align: top;
+
+}
+

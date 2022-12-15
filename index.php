@@ -7,9 +7,12 @@
  
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+       <script type="text/javascript" src ="js/crud.js"></script>
 
     <title>Trabajo Práctico Integrador Codo a Codo</title>    
   </head>
+
   
   
   <body>
@@ -160,61 +163,172 @@
         </div>
         
       </article>
-  
-      <article id="Anotarse_Orador" class="container g-1 my-4">
-  
-        <header class="text-center">
-  
-          <small class="text-muted">CONVIERTETE EN UN</small>
-  
-          <h2>ORADOR</h2>
-  
-          <p>Anótate como orador para dar una <abbr title="Tipo de charla">charla ignate</abbr>. Cuéntanos de qué quieres hablar...</p>
-  
-        </header>
-  
-        <form action="respuesta.html" method="post">
-  
-          <fieldset class="row mb-3 justify-content-center">
-  
-            <div class="col-4">
-              <input type="text" name="nombre" id="usu-nom" class="form-control" placeholder="Nombre" required maxlength="30" pattern="[a-zA-Z\s]">
-            </div>
-  
-            <div class="col-4">
-              <input type="text" name="apellido" id="usu-ape" class="form-control" placeholder="Apellido" required maxlength="30" pattern="[a-zA-Z\s]">
-            </div>
-  
-          </fieldset>
-  
-          <fieldset class="row mb-3 justify-content-center">
-  
-            <div class="col-8">
-              <textarea name="tema" class="form-control" id="usu-des" rows="3" placeholder="¿Sobre qué quieres hablar?" required aria-describedby="usu-des-ver"></textarea>
-              <div id="usu-des-ver" class="form-text">Recuerda incluir un título para tu charla.</div>
-            </div>
-  
-          </fieldset>
-  
-          <fieldset class="row justify-content-center">
-  
-            <div class="col-8">
-  
-              <div class="d-grid gap-2">
-                <button type="submit" class="btn color-pass">Enviar</button>
-              </div>
-  
-            </div>
-  
-          </fieldset>
-  
-        </form>
-  
-      </article>   
+   <!--Comienza orador doble-->
 
-      <article id="Fechas" class="card g-1 my-4 border">
-      </article> 
-       <!--Comienza la parte Orador-->
+  <article id="Fechas" class="card g-1 my-4 border">
+
+    <div class="row g-0">
+
+ <!--COMIENZA INCLUIR ORADOR A BASE DE DATOS-->
+      <div class="col-md-6 border">
+
+      <header class="text-center">
+  
+        <small class="text-muted">CONVIERTETE EN UN</small>
+
+        <h2>ORADOR</h2>
+
+        <p>Anótate como orador para dar una <abbr title="Tipo de charla">charla ignate</abbr>. Cuéntanos de qué quieres hablar...</p>
+
+      </header>
+
+      <form action="registro/agregar.php" method="post">
+
+        <fieldset class="row mb-3 justify-content-center">
+
+          <div class="col-3">
+            <input type="text" name="orador_nombre" id="orador_nombre" class="form-control" placeholder="Nombre" required maxlength="50" >
+          </div>
+
+          <div class="col-3">
+            <input type="text" name="orador_apellido" id="orador_apellido" class="form-control" placeholder="Apellido" required maxlength="50" >
+          </div>
+
+          <div class="col-2">
+            <input type="text" name="orador_dni" id="orador_dni"" class="form-control" placeholder="DNI" required maxlength="8" >
+          </div>
+        </fieldset>
+
+        <fieldset class="row mb-3 justify-content-center">
+
+          <div class="col-8">
+            <textarea name="orador_tema" class="form-control" id="orador_tema" rows="4" placeholder="¿Sobre qué quieres hablar?" required aria-describedby="usu-des-ver"></textarea>
+            <div id="usu-des-ver" class="form-text">Recuerda incluir un título para tu charla.</div>
+          </div>
+
+        </fieldset>
+
+        <fieldset class="row justify-content-center">
+
+          <div class="col-8">
+
+            <div class="d-grid gap-2">
+             
+              <button class="btn w-100 color-pass-ticket" type="button" name="enviar" value="Enviar" href="javascript:;" onclick="Agregar($('#orador_nombre').val(),$('#orador_apellido').val(),$('#orador_dni').val(),$('#orador_tema').val());">Enviar</button>
+            </div>
+            <div id="resultado"></div>
+          </div>
+         
+        </fieldset>
+
+      </form>
+      
+      </div>
+
+
+
+ <!--Finaliza INCLUIR ORADOR A BASE DE DATOS-->
+ 
+
+
+ <!--COMIENZA MOSTRAR DATOS-->
+      <div class="col-md-6 ">
+        <div id="Central" class="Central">
+          <h2>
+            <center>Ultimos Oradores Inscriptos: </center>
+          </h2>
+      
+      
+          <table style="margin: 0 auto;" border="1" cellpadding="0" cellspacing="0" class="tabla" ;>
+      
+            <tr class="ajaxTitle">
+              <th width="2%"> </th>
+              <th width="15%">
+                <center>Apellido</center>
+              </th>
+              <th width="30%">
+                <center>Nombre</center>
+              </th>
+              <th width="40%">
+                <center>Curso</center>
+              </th>
+              <th width="15%">
+                <center>Inscripcion</center>
+              </th>
+            </tr>
+            </thead>
+            <tbody>
+				<?php
+          include ("conexion/conectar.php"); 
+				$numeracion = 1;
+				while ($reg_expediente_actual = mysqli_fetch_array($libroexpedientes)) { ?>
+					<tr>
+						<th style="vertical-align:middle;"><?php echo "$numeracion" ?></th>
+
+					  <td style="vertical-align:middle;">
+							<H6><?php echo $reg_expediente_actual['apellido'] ?> </H6>
+						</td>
+					
+            <td style="vertical-align:middle;">
+							<H6><?php echo $reg_expediente_actual['nombre'] ?> </H6>
+						</td>
+					
+            <td style="vertical-align:middle;">
+							<H6><?php echo substr($reg_expediente_actual['tema'], 0, 80) ?><?php echo "..." ?> </H6>
+						</td>
+
+            <td style="vertical-align:middle;">
+							<H6><?php echo $reg_expediente_actual['inscripcion'] ?> </H6>
+						</td>
+
+						
+
+
+
+
+					</tr>
+
+			</tbody>
+
+<?php $numeracion++;
+} ?>
+          </table>
+          
+
+
+       
+          <fieldset class="row mb-3 justify-content-center">
+
+<div class="col-6">
+  <input type="text" name="eliminar_dni" id="eliminar_dni" class="form-control" placeholder="Para eliminarse como orador ingrese su DNI:" required maxlength="8" >
+</div>
+
+
+
+<div class="col-6">
+<button class="btn w-100 color-pass-ticket" type="button" name="eliminar" value="Eliminar" href="javascript:;" onclick="Eliminar($('#eliminar_dni').val());">Eliminar</button>  
+<div id="resultadoEliminar"></div>
+</div>
+</fieldset>
+          
+          
+                 
+          
+        
+        </div>
+      
+        </div>
+      
+      </div>
+      
+    </div>
+ <!--FINALIA MOSTRAR DATOS-->
+
+  
+</article>
+ 
+ <!--Finaliza orador doble-->
+
 
   <!--Comienza la parte del ticket-->
         <article id="comprar_tiket" class="container my-4" style="max-width: 50rem;">
@@ -356,6 +470,10 @@
       </nav>    
       <footer>  <h6 align="center">MGZ @ 2022</h6></footer>
     </footer>  
+
+
+  
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
