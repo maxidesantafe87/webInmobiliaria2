@@ -1,5 +1,5 @@
 <?php
-//echo "seleccionando servidor aguarde..."."<br>";
+//echo "seleccionando servidor aguarde..."."<br>"; B@sededatos2
 $host = "localhost";
 $usuario = "root";
 $pw = "";
