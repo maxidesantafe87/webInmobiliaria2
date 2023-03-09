@@ -1,7 +1,7 @@
 <?php
 
 $contraseña = "CodoACodo@2023";
-$usuario = "id20019168_codoacodo";
+$usuario = "id20019168_usuarioroot";
 $nombre_base_de_datos = "id20019168_codoacodo";
 try{
 	$base_de_datos = new PDO('mysql:host=localhost;dbname=' . $nombre_base_de_datos, $usuario, $contraseña);
