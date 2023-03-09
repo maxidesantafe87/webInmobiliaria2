@@ -3,7 +3,7 @@
 $host = "localhost";
 $usuario = "id20019168_usuarioroot";
 $pw = "CodoACodo@2023";
-$bd = "tabla_oradores";
+$bd = "id20019168_codoacodo";
 
 $mysqli = new mysqli($host, $usuario, $pw, $bd);
 $sel_bases_datos = "SELECT * FROM `tabla_oradores`ORDER BY inscripcion DESC LIMIT 5";
