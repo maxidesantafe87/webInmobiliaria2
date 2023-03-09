@@ -1,8 +1,8 @@
 <?php
 //echo "seleccionando servidor aguarde..."."<br>"; B@sededatos2
 $host = "localhost";
-$usuario = "usuarioroot";
-$pw = "q2Tp@=x>|zR*u33u";
+$usuario = "id20019168_usuarioroot";
+$pw = "CodoACodo@2023";
 $bd = "codoacodo";
 
 $mysqli = new mysqli($host, $usuario, $pw, $bd);
