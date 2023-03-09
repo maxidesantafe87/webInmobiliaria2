@@ -1,7 +1,7 @@
 <?php
 //echo "seleccionando servidor aguarde..."."<br>"; B@sededatos2
 $host = "localhost";
-$usuario = "root";
+$usuario = "usuarioroot";
 $pw = "q2Tp@=x>|zR*u33u";
 $bd = "codoacodo";
 
